@@ -1,0 +1,221 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #5a6c7d;
+    --accent-color: #74b9ff;
+    --light-bg: #fff;
+    --dark-text: #2c3e50;
+}
+
+.hero {
+    background: linear-gradient(135deg, #3498db, #74b9ff);
+    color: var(--light-bg);
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.hero .content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+main {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fotos {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.fotos h2 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.memoria-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
+    min-height: 400px;
+}
+
+.memoria-item.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.memoria-item.esquerda {
+    flex-direction: row;
+}
+
+.memoria-item.direita {
+    flex-direction: row-reverse;
+}
+
+.memoria-foto {
+    flex: 1;
+    /* Altera aqui para as dimensões fixas */
+    width: 600px;  /* Largura fixa */
+    height: 600px; /* Altura fixa */
+    overflow: hidden;
+    position: relative; /* Adicionado para centralizar a imagem dentro */
+}
+
+.memoria-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.memoria-foto img:hover {
+    transform: scale(1.05);
+}
+
+.memoria-texto {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.memoria-texto h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.memoria-texto p {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.mensagens-finais {
+    background-color: var(--light-bg);
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 60px;
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
+}
+
+.mensagens-finais h2 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mensagem-card {
+    background-color: #e3f2fd;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(52, 152, 219, 0.2);
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.mensagem-card.aparecer {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mensagem-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.mensagem-card p {
+    color: var(--dark-text);
+    font-size: 1.1rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-bg);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+#audio-control-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: var(--light-bg);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#audio-control-btn:hover {
+    background-color: #5dade2;
+}
+
+@media (max-width: 768px) {
+    .memoria-item.esquerda,
+    .memoria-item.direita {
+        flex-direction: column !important;
+    }
+
+    .memoria-foto {
+        height: 300px;
+    }
+
+    .memoria-texto {
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
